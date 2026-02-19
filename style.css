@@ -1,27 +1,39 @@
+/* GENERAL */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  line-height: 1.6;
-  background-color: #f5f7fa;
+  background: #f4f6f9;
   color: #333;
 }
 
+/* HERO SECTION */
 .hero {
   background: linear-gradient(to right, #0a2540, #0077b6);
   color: white;
-  padding: 60px;
   text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.role {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .tagline {
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 10px;
 }
 
+/* NAVIGATION */
 nav {
   background: #023e8a;
-  padding: 15px;
   text-align: center;
+  padding: 15px;
 }
 
 nav a {
@@ -31,24 +43,45 @@ nav a {
   font-weight: bold;
 }
 
-section {
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
+nav a:hover {
+  text-decoration: underline;
 }
 
+/* CARDS */
+.card {
+  background: white;
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* HEADINGS */
 h2 {
   color: #0077b6;
+  margin-bottom: 15px;
 }
 
+/* LIST */
 ul {
   padding-left: 20px;
 }
 
+/* LINKS */
+a {
+  color: #0077b6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
 footer {
   background: #0a2540;
   color: white;
   text-align: center;
   padding: 20px;
+  margin-top: 40px;
 }
-<link rel="stylesheet" href="style.css">
