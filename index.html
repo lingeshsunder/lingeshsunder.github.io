@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lingeshwaran S — Cloud Network Architect</title>
+<meta name="description" content="Cloud Network Architect specialising in SD-WAN, SASE, Zero Trust and multi-cloud solutions. 14 years, Fortune 500 clients, AWS Certified."/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+:root{
+  --white:#FAFAFA;--paper:#F4F4F2;--black:#0D0D0D;
+  --navy:#1A3D8F;--navy2:#142F6E;--navy-lt:#EEF2FB;
+  --mid:#6B6B6B;--rule:#E0E0DC;--rule2:#C8C8C2;
+  --apple:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Inter','Helvetica Neue',Arial,sans-serif;
+}
+body{font-family:var(--apple);background:var(--white);color:var(--black);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,250,0.92);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--rule);padding:0 48px;height:52px;display:flex;align-items:center;justify-content:space-between;}
+.nav-name{font-size:14px;font-weight:600;color:var(--black);letter-spacing:-0.01em;text-decoration:none;}
+.nav-name span{color:var(--navy);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:400;color:var(--mid);text-decoration:none;transition:color .2s;letter-spacing:-0.01em;}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{font-size:13px;font-weight:500;color:var(--white);background:var(--navy);padding:7px 18px;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:var(--navy2);}
+.hero{min-height:100vh;padding:120px 48px 80px;display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:center;max-width:1200px;margin:0 auto;}
+.hero-left{border-left:3px solid var(--navy);padding-left:32px;}
+.hero-label{font-size:13px;font-weight:500;color:var(--navy);letter-spacing:0.02em;margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--navy);animation:pulse 2.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero-name{font-size:clamp(44px,5.5vw,72px);font-weight:700;line-height:1.0;letter-spacing:-0.03em;color:var(--black);margin-bottom:20px;}
+.hero-title{font-size:clamp(15px,2vw,19px);font-weight:400;color:var(--mid);letter-spacing:-0.01em;margin-bottom:28px;line-height:1.5;}
+.hero-desc{font-size:15px;color:var(--mid);line-height:1.75;max-width:480px;margin-bottom:36px;font-weight:400;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;}
+.hero-tag{font-size:12px;font-weight:500;padding:5px 14px;border:1px solid var(--rule2);color:var(--mid);letter-spacing:0.01em;transition:all .2s;}
+.hero-tag:hover{border-color:var(--navy);color:var(--navy);}
+.hero-cta{display:flex;gap:16px;align-items:center;}
+.btn-solid{font-size:14px;font-weight:500;background:var(--navy);color:var(--white);padding:12px 28px;text-decoration:none;transition:background .2s;}
+.btn-solid:hover{background:var(--navy2);}
+.btn-ghost{font-size:14px;font-weight:400;color:var(--mid);text-decoration:none;transition:color .2s;border-bottom:1px solid var(--rule2);padding-bottom:2px;}
+.btn-ghost:hover{color:var(--navy);border-color:var(--navy);}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.stat-box{background:var(--white);padding:24px 20px;transition:background .2s;}
+.stat-box:hover{background:var(--navy-lt);}
+.stat-num{font-size:32px;font-weight:700;color:var(--navy);letter-spacing:-0.03em;line-height:1;margin-bottom:6px;}
+.stat-label{font-size:12px;color:var(--mid);font-weight:400;line-height:1.4;}
+.hero-award{margin-top:1px;background:var(--navy);padding:16px 20px;display:flex;align-items:center;gap:12px;}
+.award-text{font-size:12px;color:rgba(255,255,255,0.85);line-height:1.5;}
+.award-text strong{color:var(--white);font-weight:600;}
+.section{border-top:1px solid var(--rule);}
+.section-wrap{max-width:1200px;margin:0 auto;padding:80px 48px;}
+.section-header{display:grid;grid-template-columns:200px 1fr;gap:48px;margin-bottom:56px;align-items:baseline;}
+.section-label{font-size:12px;font-weight:500;color:var(--navy);letter-spacing:0.04em;padding-top:4px;}
+.section-title{font-size:clamp(24px,3vw,38px);font-weight:700;letter-spacing:-0.025em;line-height:1.15;color:var(--black);}
+.section-sub{font-size:15px;color:var(--mid);line-height:1.7;margin-top:10px;max-width:560px;font-weight:400;}
+.about-section{background:var(--paper);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.about-body p{font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:18px;}
+.about-body strong{color:var(--black);font-weight:600;}
+.about-quote{border-left:2px solid var(--navy);padding:14px 0 14px 20px;margin:28px 0;font-size:17px;font-style:italic;color:var(--black);line-height:1.6;font-weight:400;letter-spacing:-0.01em;}
+.about-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--rule);gap:16px;}
+.about-row:first-child{border-top:1px solid var(--rule);}
+.about-key{font-size:12px;color:var(--mid);font-weight:400;flex-shrink:0;min-width:110px;}
+.about-val{font-size:13px;color:var(--black);font-weight:500;text-align:right;letter-spacing:-0.01em;}
+.about-val.navy{color:var(--navy);}
+.avail-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#2E7D32;background:#E8F5E9;padding:4px 12px;}
+.avail-dot{width:5px;height:5px;border-radius:50%;background:#2E7D32;animation:pulse 2s infinite;}
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:48px;padding:40px 0;border-bottom:1px solid var(--rule);}
+.exp-item:first-child{border-top:1px solid var(--rule);}
+.exp-period{font-size:12px;color:var(--mid);margin-bottom:4px;font-weight:400;}
+.exp-company{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:4px;}
+.exp-loc{font-size:12px;color:var(--mid);}
+.exp-role{font-size:18px;font-weight:700;color:var(--black);letter-spacing:-0.02em;margin-bottom:14px;line-height:1.2;}
+.exp-bullets{list-style:none;margin-bottom:18px;}
+.exp-bullets li{font-size:14px;color:var(--mid);line-height:1.7;padding:4px 0 4px 14px;position:relative;}
+.exp-bullets li::before{content:'';position:absolute;left:0;top:12px;width:4px;height:4px;border-radius:50%;background:var(--navy);}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.exp-tag{font-size:11px;font-weight:500;padding:3px 10px;background:var(--navy-lt);color:var(--navy);}
+.skills-section{background:var(--paper);}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.skill-card{background:var(--paper);padding:32px 28px;transition:background .2s;}
+.skill-card:hover{background:var(--navy-lt);}
+.skill-icon{width:36px;height:36px;border:1px solid var(--rule2);display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:16px;}
+.skill-name{font-size:15px;font-weight:600;color:var(--black);margin-bottom:10px;letter-spacing:-0.01em;}
+.skill-desc{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:16px;}
+.skill-pills{display:flex;flex-wrap:wrap;gap:5px;}
+.skill-pill{font-size:11px;padding:2px 8px;border:1px solid var(--rule2);color:var(--mid);font-weight:400;}
+.prof-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px 80px;}
+.prof-item{margin-bottom:20px;}
+.prof-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+.prof-name{font-size:14px;font-weight:500;color:var(--black);letter-spacing:-0.01em;}
+.prof-pct{font-size:13px;color:var(--navy);font-weight:500;}
+.prof-track{height:2px;background:var(--rule);}
+.prof-fill{height:100%;background:var(--navy);width:0;transition:width 1.2s cubic-bezier(0.4,0,0.2,1);}
+.projects-list{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.project-item{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start;background:var(--white);padding:36px 32px;transition:background .2s;}
+.project-item:hover{background:var(--navy-lt);}
+.project-item.featured{background:var(--navy);}
+.project-item.featured:hover{background:var(--navy2);}
+.proj-status{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;padding:3px 10px;margin-bottom:12px;letter-spacing:0.02em;}
+.ps-active{background:#E8F5E9;color:#2E7D32;}
+.ps-prod{background:#FFF3E0;color:#E65100;}
+.ps-featured{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);}
+.ps-dot{width:5px;height:5px;border-radius:50%;background:currentColor;animation:pulse 2s infinite;}
+.proj-name{font-size:20px;font-weight:700;color:var(--black);letter-spacing:-0.02em;margin-bottom:8px;line-height:1.2;}
+.project-item.featured .proj-name{color:var(--white);}
+.proj-desc{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:20px;}
+.project-item.featured .proj-desc{color:rgba(255,255,255,0.7);}
+.proj-stack{display:flex;flex-wrap:wrap;gap:6px;}
+.proj-tag{font-size:11px;font-weight:500;padding:3px 10px;border:1px solid var(--rule2);color:var(--mid);}
+.project-item.featured .proj-tag{border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.8);}
+.proj-metrics{display:flex;flex-direction:column;gap:0;}
+.proj-metric-row{display:flex;align-items:baseline;gap:10px;padding:16px 0;border-bottom:1px solid var(--rule);}
+.project-item.featured .proj-metric-row{border-color:rgba(255,255,255,0.15);}
+.proj-metric-row:last-child{border-bottom:none;padding-bottom:0;}
+.proj-met-num{font-size:28px;font-weight:700;color:var(--navy);letter-spacing:-0.02em;line-height:1;}
+.project-item.featured .proj-met-num{color:var(--white);}
+.proj-met-label{font-size:12px;color:var(--mid);line-height:1.4;}
+.project-item.featured .proj-met-label{color:rgba(255,255,255,0.6);}
+.vaultes-flow{display:flex;flex-direction:column;gap:0;margin-top:16px;}
+.vf-step{display:flex;}
+.vf-box{flex:1;padding:9px 12px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.07);margin-bottom:1px;}
+.vf-box-name{font-size:11px;font-weight:600;color:rgba(255,255,255,0.9);margin-bottom:2px;}
+.vf-box-sub{font-size:10px;color:rgba(255,255,255,0.5);}
+.certs-section{background:var(--paper);}
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.cert-card{background:var(--paper);padding:28px 24px;display:flex;flex-direction:column;gap:10px;transition:background .2s;}
+.cert-card:hover{background:var(--navy-lt);}
+.cert-card.primary{background:var(--navy);}
+.cert-card.primary:hover{background:var(--navy2);}
+.cert-badge{width:40px;height:40px;border:1px solid var(--rule2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:0.02em;}
+.cert-card.primary .cert-badge{border-color:rgba(255,255,255,0.3);color:var(--white);background:rgba(255,255,255,0.1);}
+.cert-name{font-size:14px;font-weight:600;color:var(--black);letter-spacing:-0.01em;line-height:1.3;}
+.cert-card.primary .cert-name{color:var(--white);}
+.cert-issuer{font-size:12px;color:var(--mid);}
+.cert-card.primary .cert-issuer{color:rgba(255,255,255,0.6);}
+.cert-id{font-size:11px;color:var(--mid);}
+.cert-card.primary .cert-id{color:rgba(255,255,255,0.5);}
+.cert-status{font-size:11px;font-weight:500;color:var(--navy);margin-top:auto;display:flex;align-items:center;gap:5px;}
+.cert-card.primary .cert-status{color:rgba(255,255,255,0.85);}
+.cert-status::before{content:'';width:4px;height:4px;border-radius:50%;background:currentColor;}
+.cert-inprogress{font-size:11px;font-weight:500;color:#2E7D32;margin-top:auto;display:flex;align-items:center;gap:5px;animation:pulse 2s infinite;}
+.cert-inprogress::before{content:'';width:4px;height:4px;border-radius:50%;background:currentColor;}
+.articles-section{background:var(--paper);}
+.article-item{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start;padding:28px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;transition:padding-left .2s;}
+.article-item:first-child{border-top:1px solid var(--rule);}
+.article-item:not(.dimmed):hover{padding-left:12px;}
+.article-item.dimmed{opacity:0.4;pointer-events:none;}
+.art-tag{display:inline-block;font-size:11px;font-weight:500;color:var(--navy);padding:2px 8px;border:1px solid rgba(26,61,143,0.25);background:var(--navy-lt);margin-bottom:10px;}
+.art-title{font-size:17px;font-weight:600;color:var(--black);letter-spacing:-0.02em;line-height:1.3;margin-bottom:8px;}
+.art-excerpt{font-size:13px;color:var(--mid);line-height:1.65;max-width:560px;}
+.art-meta{font-size:12px;color:var(--mid);white-space:nowrap;margin-top:4px;}
+.art-coming{font-size:11px;color:var(--mid);white-space:nowrap;margin-top:4px;opacity:0.5;}
+.connect-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.connect-body{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:32px;margin-top:16px;}
+.connect-links{display:flex;flex-wrap:wrap;gap:10px;}
+.connect-link{display:flex;align-items:center;gap:8px;padding:11px 20px;border:1px solid var(--rule2);color:var(--black);text-decoration:none;font-size:13px;font-weight:500;transition:all .2s;}
+.connect-link:hover{border-color:var(--navy);color:var(--navy);background:var(--navy-lt);}
+.connect-link.primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.connect-link.primary:hover{background:var(--navy2);}
+.connect-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--rule);}
+.connect-row:first-child{border-top:1px solid var(--rule);}
+.connect-row-label{font-size:12px;color:var(--mid);}
+.connect-row-val{font-size:13px;font-weight:500;color:var(--black);}
+.connect-row-val.navy{color:var(--navy);}
+footer{border-top:1px solid var(--rule);background:var(--black);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
+.footer-l{font-size:13px;color:rgba(255,255,255,0.4);}
+.footer-r{font-size:12px;color:rgba(255,255,255,0.25);}
+.footer-r span{color:rgba(255,255,255,0.5);}
+@media(max-width:960px){
+  nav{padding:0 24px;}.nav-links{display:none;}
+  .hero{grid-template-columns:1fr;padding:100px 24px 60px;gap:40px;}
+  .hero-right{display:none;}
+  .section-wrap{padding:60px 24px;}
+  .section-header{grid-template-columns:1fr;gap:12px;}
+  .about-grid{grid-template-columns:1fr;}
+  .skills-grid{grid-template-columns:1fr 1fr;}
+  .exp-item{grid-template-columns:1fr;gap:16px;}
+  .project-item{grid-template-columns:1fr;}
+  .certs-grid{grid-template-columns:1fr 1fr;}
+  .prof-grid{grid-template-columns:1fr;}
+  .connect-inner{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:20px 24px;}
+}
+@media(max-width:600px){
+  .skills-grid{grid-template-columns:1fr;}
+  .certs-grid{grid-template-columns:1fr;}
+  .article-item{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="#">Lingeshwaran <span>S.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#articles">Articles</a></li>
+    <li><a href="#connect">Contact</a></li>
+  </ul>
+  <a href="#connect" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-label"><div class="hero-dot"></div>Available for senior architect roles</div>
+    <h1 class="hero-name">Cloud<br/>Network<br/>Architect.</h1>
+    <p class="hero-title">SD-WAN · SASE · Zero Trust · Multi-Cloud<br/>14 years building enterprise infrastructure</p>
+    <p class="hero-desc">I design and deliver the networks, security architectures, and cloud systems that Fortune 500 enterprises rely on — from SD-WAN deployments across hundreds of sites to Zero Trust frameworks protecting thousands of users.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">SD-WAN</span>
+      <span class="hero-tag">SASE</span>
+      <span class="hero-tag">AWS Certified</span>
+      <span class="hero-tag">Zero Trust</span>
+      <span class="hero-tag">Cloud Architecture</span>
+      <span class="hero-tag">Network Automation</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-solid">View my work</a>
+      <a href="#connect" class="btn-ghost">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-num">14+</div><div class="stat-label">Years of enterprise experience</div></div>
+      <div class="stat-box"><div class="stat-num">20+</div><div class="stat-label">SD-WAN PoCs delivered</div></div>
+      <div class="stat-box"><div class="stat-num">10+</div><div class="stat-label">Fortune 500 clients served</div></div>
+      <div class="stat-box"><div class="stat-num">40%</div><div class="stat-label">Perimeter reduction via SASE</div></div>
+    </div>
+    <div class="hero-award">
+      <div class="award-text"><strong>7 performance awards</strong> — Ericsson Key Contributor Prestige, Best Employee 2024-25, Marlabs MVP</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section about-section">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-label">About</div>
+      <div><h2 class="section-title">Where deep network expertise meets cloud and AI.</h2></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>I'm <strong>Lingeshwaran S.</strong> — a Cloud Network Architect based in Bengaluru with 14 years designing, deploying, and evolving enterprise-grade network and cloud infrastructure for global clients at Ericsson India Global Services.</p>
+        <p>My expertise sits at the intersection of <strong>SD-WAN, SASE, Cloud Architecture, and network automation</strong>. I've seen this industry shift from hardware-centric MPLS to software-defined everything, and I've been hands-on at every stage — not just advising, but building.</p>
+        <div class="about-quote">"Technology without business impact is just cost. Every architecture decision I make is anchored in one question: does this deliver measurable value?"</div>
+        <p>Beyond client work, I build my own tools — from Netshape, a production WAN emulator adopted by my team, to Vaultes, an AI/ML cloud cost optimisation tool I'm developing independently.</p>
+      </div>
+      <div>
+        <div class="about-row"><span class="about-key">Current role</span><span class="about-val">Cloud Network Solution Architect</span></div>
+        <div class="about-row"><span class="about-key">Employer</span><span class="about-val navy">Ericsson India Global Services</span></div>
+        <div class="about-row"><span class="about-key">Specialisation</span><span class="about-val">SD-WAN · SASE · Cloud · AI</span></div>
+        <div class="about-row"><span class="about-key">Experience</span><span class="about-val navy">14+ years</span></div>
+        <div class="about-row"><span class="about-key">Location</span><span class="about-val">Bengaluru, India</span></div>
+        <div class="about-row"><span class="about-key">Certification</span><span class="about-val navy">AWS Solutions Architect Associate</span></div>
+        <div class="about-row"><span class="about-key">LinkedIn</span><span class="about-val navy">lingeshwarans</span></div>
+        <div class="about-row"><span class="about-key">Status</span><span class="about-val"><span class="avail-badge"><span class="avail-dot"></span>Open to opportunities</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-label">Experience</div>
+      <div><h2 class="section-title">14 years across enterprise networking, cloud, and security.</h2></div>
+    </div>
+    <div>
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-period">Mar 2021 – Present</div>
+          <div class="exp-company">Ericsson India Global Services</div>
+          <div class="exp-loc">Bengaluru, India</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">SD-WAN & Cloud Network Solution Architect</div>
+          <ul class="exp-bullets">
+            <li>Led 20+ enterprise SD-WAN PoCs across Cisco Catalyst, VMware VeloCloud, Aruba EdgeConnect, and Cisco Meraki — delivering each within 4-5 weeks with 100% client acceptance rate</li>
+            <li>Architected multi-cloud solutions on AWS (Transit Gateway, Direct Connect, VPC) and Azure (Virtual WAN, ExpressRoute) for 10+ global Fortune 500 clients — 99.9% uptime</li>
+            <li>Deployed SASE architecture (Zscaler ZIA/ZPA, Palo Alto Prisma, Netskope) integrating ZTNA, CASB, SWG, DLP — reducing perimeter dependency by 40% across 3 global enterprises</li>
+            <li>Designed greenfield identity and access architecture for a critical national infrastructure client — integrating conditional access, Zero Trust policies, and hybrid identity across a multi-tenant OSS environment</li>
+            <li>Engineered Netshape WAN Emulator and automated SD-WAN provisioning via Ansible, Python, and GitLab CI/CD — saving 200+ hours across 20+ deployments</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">SD-WAN</span><span class="exp-tag">SASE</span><span class="exp-tag">Zero Trust</span><span class="exp-tag">AWS</span><span class="exp-tag">Azure</span><span class="exp-tag">Ansible</span><span class="exp-tag">Python</span><span class="exp-tag">Identity Architecture</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-period">Dec 2016 – Mar 2021</div>
+          <div class="exp-company">Marlabs Software Pvt. Ltd.</div>
+          <div class="exp-loc">India</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Senior Technical Lead — Network & Security</div>
+          <ul class="exp-bullets">
+            <li>Administered and secured 100+ network devices (Cisco ASA, FortiGate, SonicWall, Meraki) across 10+ sites for 2,000+ users — 99.9% uptime</li>
+            <li>Deployed Zscaler ZIA/ZPA — managed CASB, DLP, SSL inspection, and user onboarding across enterprise cloud security platform</li>
+            <li>Executed Fortinet Firewall migration in 4 weeks with zero downtime — received formal client appreciation</li>
+            <li>Resolved 100+ monthly L2/L3 incidents — reduced resolution time by 30-40%</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Fortinet</span><span class="exp-tag">Cisco ASA</span><span class="exp-tag">Zscaler</span><span class="exp-tag">Meraki</span><span class="exp-tag">IDS/IPS</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-period">Jul 2012 – Dec 2016</div>
+          <div class="exp-company">FuGenX Technologies Pvt. Ltd.</div>
+          <div class="exp-loc">India</div>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Senior Network Engineer</div>
+          <ul class="exp-bullets">
+            <li>Managed Cisco router, switch, and wireless infrastructure for 200+ users — BGP, OSPF, IPSec/SSL VPN, DHCP, VOIP, and Wi-Fi</li>
+            <li>Provided L2 support and improved resolution time by 30% through structured documentation</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Cisco</span><span class="exp-tag">BGP</span><span class="exp-tag">OSPF</span><span class="exp-tag">IPSec</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section skills-section">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-label">Skills</div>
+      <div>
+        <h2 class="section-title">Core areas of expertise.</h2>
+        <p class="section-sub">Built over 14 years of hands-on enterprise delivery — not certifications alone.</p>
+      </div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">SD-WAN Architecture</div>
+        <div class="skill-desc">20+ PoCs across Cisco Catalyst, VeloCloud, Aruba, and Meraki. HLD, LLD, RFP, BoM, and stakeholder presentations — end to end.</div>
+        <div class="skill-pills"><span class="skill-pill">Cisco Catalyst</span><span class="skill-pill">VeloCloud</span><span class="skill-pill">Aruba EdgeConnect</span><span class="skill-pill">Cisco Meraki</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🛡️</div>
+        <div class="skill-name">SASE & Zero Trust</div>
+        <div class="skill-desc">Deployed ZTNA, CASB, SWG, DLP, UEBA, and FWaaS for 3 global enterprises — reducing perimeter dependency by 40%.</div>
+        <div class="skill-pills"><span class="skill-pill">Zscaler ZIA/ZPA</span><span class="skill-pill">Palo Alto Prisma</span><span class="skill-pill">Netskope</span><span class="skill-pill">ZTNA</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">☁️</div>
+        <div class="skill-name">Cloud Architecture</div>
+        <div class="skill-desc">Multi-cloud design on AWS and Azure. Transit Gateway, Direct Connect, Virtual WAN, ExpressRoute — AWS Certified Solutions Architect.</div>
+        <div class="skill-pills"><span class="skill-pill">AWS TGW</span><span class="skill-pill">Direct Connect</span><span class="skill-pill">Azure vWAN</span><span class="skill-pill">ExpressRoute</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔐</div>
+        <div class="skill-name">Identity & Access Architecture</div>
+        <div class="skill-desc">Designed hybrid identity and conditional access architecture for critical infrastructure — integrating Zero Trust access control across multi-tenant systems.</div>
+        <div class="skill-pills"><span class="skill-pill">Entra ID</span><span class="skill-pill">Conditional Access</span><span class="skill-pill">Zero Trust</span><span class="skill-pill">SAML/SSO</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">Network Automation</div>
+        <div class="skill-desc">Python, Ansible, and GitLab CI/CD for automated SD-WAN provisioning. Built Netshape — a production WAN emulation tool across 20+ deployments.</div>
+        <div class="skill-pills"><span class="skill-pill">Python</span><span class="skill-pill">Ansible</span><span class="skill-pill">GitLab CI/CD</span><span class="skill-pill">Terraform</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📡</div>
+        <div class="skill-name">Enterprise Network Design</div>
+        <div class="skill-desc">End-to-end architecture from campus LAN to global WAN. BGP, OSPF, IPSec, MPLS, QoS — with the security posture to back it up.</div>
+        <div class="skill-pills"><span class="skill-pill">BGP</span><span class="skill-pill">OSPF</span><span class="skill-pill">IPSec</span><span class="skill-pill">MPLS</span><span class="skill-pill">QoS</span></div>
+      </div>
+    </div>
+    <div style="margin-top:64px;">
+      <h3 style="font-size:17px;font-weight:600;letter-spacing:-0.02em;color:var(--black);margin-bottom:32px;">Proficiency levels</h3>
+      <div class="prof-grid">
+        <div>
+          <div class="prof-item"><div class="prof-header"><span class="prof-name">SD-WAN Architecture</span><span class="prof-pct">95%</span></div><div class="prof-track"><div class="prof-fill" data-w="95"></div></div></div>
+          <div class="prof-item"><div class="prof-header"><span class="prof-name">SASE & Zero Trust</span><span class="prof-pct">92%</span></div><div class="prof-track"><div class="prof-fill" data-w="92"></div></div></div>
+          <div class="prof-item"><div class="prof-header"><span class="prof-name">Cloud Architecture (AWS/Azure)</span><span class="prof-pct">88%</span></div><div class="prof-track"><div class="prof-fill" data-w="88"></div></div></div>
+          <div class="prof-item"><div class="prof-header"><span class="prof-name">Enterprise Network Design</span><span class="prof-pct">96%</span></div><div class="prof-track"><div class="prof-fill" data-w="96"></div></div></div>
+        </div>
+        <div>
+          <div class="prof-item"><div class="prof-header"><span class="prof-name">Network Automation</span><span class="prof-pct">85%</span></div><div class="prof-track"><div class="prof-fill" data-w="85"></div></div></div>
+          <div class="prof-item"><div class="prof-header"><span class="prof-name">Identity Architecture</span><span class="prof-pct">78%</span></div><div class="prof-track"><div class="prof-fill" data-w="78"></div></div></div>
+          <div class="prof-item"><div class="prof-header"><span class="prof-name">AI/ML for Cloud Operations</span><span class="prof-pct">72%</span></div><div class="prof-track"><div class="prof-fill" data-w="72"></div></div></div>
+          <div class="prof-item"><div class="prof-header"><span class="prof-name">Terraform / IaC</span><span class="prof-pct">78%</span></div><div class="prof-track"><div class="prof-fill" data-w="78"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-label">Projects</div>
+      <div>
+        <h2 class="section-title">Building things outside the day job.</h2>
+        <p class="section-sub">Three independent projects — one production tool in daily use, one AI/ML system in development, one cloud automation lab.</p>
+      </div>
+    </div>
+    <div class="projects-list">
+      <div class="project-item featured">
+        <div>
+          <div class="proj-status ps-featured"><span class="ps-dot"></span>Active development</div>
+          <div class="proj-name">Vaultes</div>
+          <div class="proj-desc">An AI/ML-powered cloud cost optimisation tool. Detects spending anomalies, forecasts future costs, and generates plain-English recommendations — turning reactive cloud billing into proactive FinOps.</div>
+          <div class="proj-stack">
+            <span class="proj-tag">AWS SageMaker</span><span class="proj-tag">Amazon Forecast</span><span class="proj-tag">AWS Bedrock</span><span class="proj-tag">Cost Explorer API</span><span class="proj-tag">Python</span>
+          </div>
+        </div>
+        <div class="proj-metrics">
+          <div class="proj-metric-row"><div class="proj-met-num">3</div><div class="proj-met-label">AWS AI services — SageMaker, Forecast, Bedrock</div></div>
+          <div class="vaultes-flow">
+            <div class="vf-step"><div class="vf-box"><div class="vf-box-name">Data ingestion</div><div class="vf-box-sub">Cost Explorer API</div></div></div>
+            <div class="vf-step"><div class="vf-box"><div class="vf-box-name">Anomaly detection</div><div class="vf-box-sub">SageMaker ML model</div></div></div>
+            <div class="vf-step"><div class="vf-box"><div class="vf-box-name">Cost forecasting</div><div class="vf-box-sub">Amazon Forecast</div></div></div>
+            <div class="vf-step"><div class="vf-box"><div class="vf-box-name">AI recommendations</div><div class="vf-box-sub">AWS Bedrock — plain English</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-item">
+        <div>
+          <div class="proj-status ps-prod">Production tool</div>
+          <div class="proj-name">Netshape WAN Emulator</div>
+          <div class="proj-desc">A Linux-based WAN emulation tool engineered for SD-WAN PoC validation. Adopted by my 7-member team — eliminated 200+ hours of manual lab setup across 20+ enterprise deployments.</div>
+          <div class="proj-stack"><span class="proj-tag">Linux</span><span class="proj-tag">Python</span><span class="proj-tag">WAN emulation</span><span class="proj-tag">SD-WAN</span></div>
+        </div>
+        <div class="proj-metrics">
+          <div class="proj-metric-row"><div class="proj-met-num">200+</div><div class="proj-met-label">Hours saved across deployments</div></div>
+          <div class="proj-metric-row"><div class="proj-met-num">7</div><div class="proj-met-label">Team members using it daily</div></div>
+          <div class="proj-metric-row"><div class="proj-met-num">10</div><div class="proj-met-label">Hours saved per PoC engagement</div></div>
+        </div>
+      </div>
+      <div class="project-item">
+        <div>
+          <div class="proj-status ps-active"><span class="ps-dot"></span>Active</div>
+          <div class="proj-name">Aruba SD-WAN Automation on AWS</div>
+          <div class="proj-desc">Automated Aruba SD-WAN hub-spoke deployment on AWS using Ansible and Python. Validated across 4 demo use cases — link failover, SLA-based path steering, QoS, and application protection.</div>
+          <div class="proj-stack"><span class="proj-tag">AWS</span><span class="proj-tag">Ansible</span><span class="proj-tag">Python</span><span class="proj-tag">Aruba EdgeConnect</span></div>
+        </div>
+        <div class="proj-metrics">
+          <div class="proj-metric-row"><div class="proj-met-num">4</div><div class="proj-met-label">Validated customer demo use cases</div></div>
+          <div class="proj-metric-row"><div class="proj-met-num">100%</div><div class="proj-met-label">Automated via Ansible/Python</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section certs-section">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-label">Certifications</div>
+      <div><h2 class="section-title">Credentials that back the work.</h2></div>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card primary">
+        <div class="cert-badge">AWS</div>
+        <div class="cert-name">Solutions Architect — Associate</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+        <div class="cert-id">Credential ID: [YOUR-CERT-ID-HERE]</div>
+        <div class="cert-status">Certified 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="color:#2E7D32;border-color:#C8E6C9;">AWS</div>
+        <div class="cert-name">AI Practitioner</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+        <div class="cert-id">Active preparation</div>
+        <div class="cert-inprogress">In progress — 2026</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">CMN</div>
+        <div class="cert-name">Cisco Meraki Network Operator</div>
+        <div class="cert-issuer">Cisco Systems</div>
+        <div class="cert-id">Meraki SD-WAN track</div>
+        <div class="cert-status">Active</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">VCP</div>
+        <div class="cert-name">VMware VTSP — SD-WAN</div>
+        <div class="cert-issuer">VMware by Broadcom</div>
+        <div class="cert-id">VeloCloud specialisation</div>
+        <div class="cert-status">Active</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">CCN</div>
+        <div class="cert-name">Cisco Certified Network Associate</div>
+        <div class="cert-issuer">Cisco Systems</div>
+        <div class="cert-id">ID: CSCO13064498</div>
+        <div class="cert-status">Active</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">NSE</div>
+        <div class="cert-name">Fortinet NSE 2 — Network Security</div>
+        <div class="cert-issuer">Fortinet</div>
+        <div class="cert-id">No: Pqk9X2AdKu</div>
+        <div class="cert-status">Active</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articles" class="section articles-section">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-label">Articles</div>
+      <div><h2 class="section-title">Writing on AI, cloud, and network architecture.</h2></div>
+    </div>
+    <div>
+      <a class="article-item" href="Projects/ai_business_article.html" target="_blank">
+        <div>
+          <div class="art-tag">Artificial Intelligence</div>
+          <div class="art-title">AI Is Eating Your Industry — Are You Ready?</div>
+          <div class="art-excerpt">A comprehensive executive guide covering AI's real business case, sector-by-sector transformation, and the 5-phase implementation roadmap. No hype — just the intelligence you need.</div>
+        </div>
+        <div class="art-meta">12 min read · Feb 2025</div>
+      </a>
+      <div class="article-item dimmed">
+        <div><div class="art-tag">SD-WAN</div><div class="art-title">SD-WAN vs MPLS: The Real Cost of Staying on Legacy Infrastructure</div><div class="art-excerpt">Why enterprises clinging to traditional WAN are paying a hidden tax — in dollars, agility, and competitive position.</div></div>
+        <div class="art-coming">Coming soon</div>
+      </div>
+      <div class="article-item dimmed">
+        <div><div class="art-tag">SASE</div><div class="art-title">SASE Demystified: A Practitioner's Guide to Zero Trust Network Access</div><div class="art-excerpt">What SASE actually is, what it isn't, and how to implement it without the vendor noise.</div></div>
+        <div class="art-coming">Coming soon</div>
+      </div>
+      <div class="article-item dimmed">
+        <div><div class="art-tag">Automation</div><div class="art-title">Network Automation with Python and Ansible: From Zero to Production</div><div class="art-excerpt">A practitioner's roadmap for eliminating manual network toil — real scripts, real patterns, real results.</div></div>
+        <div class="art-coming">Coming soon</div>
+      </div>
+      <div class="article-item dimmed">
+        <div><div class="art-tag">AI + Cloud</div><div class="art-title">Why I'm Building Vaultes — When Network Architecture Meets AI</div><div class="art-excerpt">The problem, the architecture, and the honest lessons from building an AI/ML tool as a network architect.</div></div>
+        <div class="art-coming">Coming Q3 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect" class="section">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-label">Contact</div>
+      <div><h2 class="section-title">Open to the right conversation.</h2></div>
+    </div>
+    <div class="connect-inner">
+      <div>
+        <p class="connect-body">Whether you're evaluating senior cloud network architects, exploring SD-WAN or SASE strategy, or simply want to exchange ideas on where enterprise networking is heading — I'm reachable and responsive.</p>
+        <div class="connect-links">
+          <a href="https://www.linkedin.com/in/lingeshwarans/" target="_blank" class="connect-link primary">LinkedIn</a>
+          <a href="mailto:lingeshsunder@gmail.com" class="connect-link">Email</a>
+          <a href="https://github.com/lingeshwarans" target="_blank" class="connect-link">GitHub</a>
+          <a href="https://medium.com/@lingeshwarans" target="_blank" class="connect-link">Medium</a>
+        </div>
+      </div>
+      <div>
+        <div class="connect-row"><span class="connect-row-label">Location</span><span class="connect-row-val">Bengaluru, India</span></div>
+        <div class="connect-row"><span class="connect-row-label">Notice period</span><span class="connect-row-val">3 months</span></div>
+        <div class="connect-row"><span class="connect-row-label">Open to</span><span class="connect-row-val">India · Global · Remote</span></div>
+        <div class="connect-row"><span class="connect-row-label">Target roles</span><span class="connect-row-val navy">Cloud / Network Architect</span></div>
+        <div class="connect-row"><span class="connect-row-label">Availability</span><span class="connect-row-val"><span class="avail-badge"><span class="avail-dot"></span>Actively looking</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-l">© 2025 Lingeshwaran S. — All rights reserved.</div>
+  <div class="footer-r">Built with purpose · Hosted on <span>GitHub Pages</span></div>
+</footer>
+
+<script>
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.prof-fill').forEach(b => { b.style.width = b.dataset.w + '%'; });
+    }
+  });
+}, {threshold:0.3});
+document.querySelectorAll('.prof-grid').forEach(g => barObs.observe(g));
+</script>
+</body>
+</html>
